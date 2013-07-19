@@ -54,8 +54,8 @@ class PageCache {
 		$this->setCacheFileName();
 		$this->setCacheFileNameInfo();
 		if (file_exists($this->getCacheFileName()) && file_exists($this->getCacheFileNameInfo())) {
-			$cache_time = file_get_contents ($this->getCacheFileNameInfo()) + (int)$this->expiryInterval; //Last update time of the cache file
-			$expiry_time = time(); //Expiry time for the cache
+			$cache_time = file_get_contents ($this->getCacheFileNameInfo()) + (int)$this->expiryInterval;
+			$expiry_time = time();
 
 			if ((int)$cache_time >= (int)$expiry_time) {
 				return true;
