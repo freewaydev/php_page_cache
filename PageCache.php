@@ -10,13 +10,14 @@ class PageCache {
 	private $expiryInterval = 900;
 	private $cacheFileName;
 	private $cacheFileNameInfo;
+	private $cacheFileEnding = '.cache';
 
 	public function setKey($key) { $this->key = $key; }
     public function setCacheDir($val) {  $this->cacheDir = $val; }
     public function setExpiryInterval($val) {  $this->expiryInterval = $val; }
 
     private function setCacheFileName() {
-    	$this->cacheFileName = $this->cacheDir.'/'.$this->key.'.cache';
+    	$this->cacheFileName = $this->cacheDir.'/'.$this->key.$this->cacheFileEnding;
     }
 
     private function setCacheFileNameInfo() {
