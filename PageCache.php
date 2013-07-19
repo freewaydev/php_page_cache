@@ -39,7 +39,7 @@ class PageCache {
 	public function get() {
 		$exitst = $this->exists();
 		if ($exitst) {
-			return file_get_contents($this->getCacheFileName);
+			return file_get_contents($this->getCacheFileName());
 		} else {
 			return false;
 		}
@@ -52,6 +52,8 @@ class PageCache {
 
 			if ((int)$cache_time >= (int)$expiry_time) {
 				return true;
+			} else  {
+				return false;
 			}
 		}
 		return false;
