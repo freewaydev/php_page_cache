@@ -11,6 +11,7 @@ class PageCache {
 	private $cacheFileName;
 	private $cacheFileNameInfo;
 	private $cacheFileEnding = '.cache';
+	private $cacheFileInfoEnding = '.info';
 
 	public function setKey($key) { $this->key = $key; }
     public function setCacheDir($val) {  $this->cacheDir = $val; }
@@ -21,7 +22,7 @@ class PageCache {
     }
 
     private function setCacheFileNameInfo() {
-    	$this->cacheFileNameInfo = $this->cacheDir.'/'.$this->key.'.info';
+    	$this->cacheFileNameInfo = $this->cacheDir.'/'.$this->key.$this->cacheFileInfoEnding;
     }
 
     public function getCacheFileName() {
