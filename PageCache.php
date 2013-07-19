@@ -1,6 +1,11 @@
 <?php
 
 class PageCache {
+
+	function __construct($key) {
+		$this->setKey($key);
+    }
+
 	private $cacheDir = 'cache'; 
 	private $expiryInterval = 900;
 	private $cacheFileName;
